@@ -1,4 +1,4 @@
-const path = require(`path`);
+const path = require(`path`)
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
@@ -16,12 +16,12 @@ exports.createPages = ({ graphql, actions }) => {
       }
     `).then(result => {
       if (result.errors) {
-        result(result.errors);
+        reject(result.errors);
       }
       result.data.allContentfulProduct.edges.forEach((edge) => {
         createPage({
           path: edge.node.slug,
-          component: path.resolve(`.src/templates/product,js`),
+          component: path.resolve(`./src/templates/product.js`),
           context: {
             slug: edge.node.slug
           }
