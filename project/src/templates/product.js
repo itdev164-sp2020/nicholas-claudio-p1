@@ -4,11 +4,12 @@ import Layout from '../components/layout'
 
 
 const Product = ({ data }) => {
-  const { productName, productDescription, image } = data.contentfulProduct;
+  const { productName, productDescription, price } = data.contentfulProduct;
 
   return (
     <Layout>
       <h1>{productName.productName}</h1>
+      <div>{price}</div>
       {/* <img src={image.file.url} alt=""/> */}
       <div dangerouslySetInnerHTML={{__html: productDescription.childMarkdownRemark.html}}></div>
     </Layout>
@@ -23,6 +24,7 @@ export const pageQuery = graphql`
       productName {
         productName
       }
+      price
       slug
       productDescription {
         childMarkdownRemark {

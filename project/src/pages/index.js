@@ -15,7 +15,11 @@ const IndexPage = ({ data, image }) => (
           <li>
             <Link to={edge.node.slug} key={edge.node.id}>{edge.node.productName.productName}</Link>
             <div>
-              {/* <img src={edge.node.image.fluid.src} alt="pic"/> */}
+              {edge.node.price}
+            </div>
+            <div>
+              {/* <img src={edge.node.image.fluid.src} alt="pic"/>  */}
+              {/* I tried to access the images here along with a query to grab them but I could not get it to work for some reason */}
             </div>
             <div>
               {edge.node.productDescription.childMarkdownRemark.excerpt}
@@ -37,7 +41,8 @@ export const query = graphql`
           id
           productName {
             productName
-          }        
+          }
+          price        
           slug
           productDescription {
             childMarkdownRemark {

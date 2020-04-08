@@ -18,6 +18,7 @@ module.exports = {
     },
     `gatsby-transformer-remark`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-styled-componetns`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
